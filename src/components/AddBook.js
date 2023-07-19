@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { addbook, postBook } from '../redux/books/booksSlice';
 
 function AddBook() {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({ title: '', author: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.title !== '' || formData.author !== '') {
-      dispatch(addBook(formData));
+      const bookObject = {
+        title: formData.title,
+        author: formData.author,
+      };
+      dispatch(addbook(bookObject));
+      await dispatch(postBook(bookObject));
       setFormData({ title: '', author: '' });
     }
   };
