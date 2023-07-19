@@ -25,6 +25,7 @@ function AddBook() {
 
   return (
     <>
+      <div className="line" />
       <div className="AddBook">
         <h2>ADD NEW BOOK</h2>
         <form className="bookform">

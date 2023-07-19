@@ -17,6 +17,7 @@ const Books = ({ id, title, author }) => {
     <div className="books-container">
       <div className="book-item">
         <div className="section1">
+          <p className="fiction">Fiction</p>
           <h2>{title}</h2>
           <p>{author}</p>
           <div className="book-button-section">
